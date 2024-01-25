@@ -1,8 +1,5 @@
-#!/usr/bin/env bash
-# installs nginx and configure it to listen on port 80
-# print "Hello World"
-
-sudo apt-get -y update
-sudo apt-get -y install nginx
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-sudo service nginx start
+# puppet declarative script to install flask from pip3.
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3',
+}
